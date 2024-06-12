@@ -1,6 +1,11 @@
-# Understanding Win Rate for Better LLM-based Preference Evaluation (Adaptive AlpacaEval) Framework
+# Understanding Win Rate for Better LLM-based Preference Evaluation Framework
 
 The Adaptive AlpacaEval framework is designed to automate the generation and evaluation of datasets using different configurations. This repository includes scripts for generating data, hosting models, and evaluating the results comprehensively. We continuously refine our approach based on community feedback to enhance the open-source tools we offer.
+
+
+<h1 style="text-align:center">
+<img style="vertical-align:middle" width="2000" height="390" src="./img/logo.png" />
+</h1>
 
 ## Features
 
@@ -68,6 +73,7 @@ bash generate_all_adap_alpaca.sh
 ```
 
 **What it does:**
+
 - Creates an output directory for the generated datasets.
 - Executes a Python script multiple times with different configurations to cover a range of word count limits from the template JSON.
 - Outputs are stored in `adapAlpaca_output` with filenames indicating the word count range.
@@ -83,6 +89,7 @@ bash host_vllm_server.sh
 ```
 
 **Details:**
+
 - Sets up a server for the LLaMA model or any specified model compatible with the VLLM serving guidelines.
 - Configures the server to run in the background, logging its output for monitoring purposes.
 
@@ -97,10 +104,10 @@ bash generate_different_dataset_and_eval_gpt.sh
 ```
 
 **Steps:**
+
 1. **Dataset Generation:** Generates datasets for different configurations (e.g., `koala`, `vicuna`).
 2. **Evaluation Preparation:** Prepares folders and configurations for evaluation.
 3. **Evaluation Execution:** Runs evaluation scripts to assess the dataset quality and model performance, outputting detailed metrics and logs.
-
 
 ### `generate_different_dataset_and_eval_vllm.sh`
 
@@ -115,6 +122,7 @@ bash generate_different_dataset_and_eval_vllm.sh
 ```
 
 **Steps:**
+
 1. **Dataset Generation:** Generates datasets for different configurations (e.g., `koala`, `vicuna`).
 2. **Evaluation Preparation:** Prepares folders and configurations for evaluation.
 3. **Evaluation Execution:** Runs evaluation scripts to assess the dataset quality and model performance, outputting detailed metrics and logs.
@@ -130,6 +138,7 @@ bash generate_different_dataset_gpt.sh
 ```
 
 **Functionality:**
+
 - Iterates through various dataset templates.
 - Applies the specified GPT model to generate outputs, which are saved in a designated output folder.
 
@@ -146,10 +155,9 @@ bash generate_different_dataset_vllm.sh
 ```
 
 **Operation:**
+
 - Similar to the GPT script but tailored for VLLM models.
 - Ensures datasets are compatible with the VLLM model outputs and specifications.
-
-
 
 ## Citation
 
@@ -167,4 +175,3 @@ If you find the AdapAlpaca framework useful in your research, please consider ci
 ## Contributions
 
 We welcome contributions and suggestions from the community. Please feel free to fork the repository, make changes, and submit pull requests. Your insights are valuable to us!
-
