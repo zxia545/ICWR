@@ -1,0 +1,510 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "citeAs": "cr:citeAs",
+    "column": "cr:column",
+    "conformsTo": "dct:conformsTo",
+    "cr": "http://mlcommons.org/croissant/",
+    "rai": "http://mlcommons.org/croissant/RAI/",
+    "data": {
+      "@id": "cr:data",
+      "@type": "@json"
+    },
+    "dataType": {
+      "@id": "cr:dataType",
+      "@type": "@vocab"
+    },
+    "dct": "http://purl.org/dc/terms/",
+    "examples": {
+      "@id": "cr:examples",
+      "@type": "@json"
+    },
+    "extract": "cr:extract",
+    "field": "cr:field",
+    "fileProperty": "cr:fileProperty",
+    "fileObject": "cr:fileObject",
+    "fileSet": "cr:fileSet",
+    "format": "cr:format",
+    "includes": "cr:includes",
+    "isLiveDataset": "cr:isLiveDataset",
+    "jsonPath": "cr:jsonPath",
+    "key": "cr:key",
+    "md5": "cr:md5",
+    "parentField": "cr:parentField",
+    "path": "cr:path",
+    "recordSet": "cr:recordSet",
+    "references": "cr:references",
+    "regex": "cr:regex",
+    "repeated": "cr:repeated",
+    "replace": "cr:replace",
+    "sc": "https://schema.org/",
+    "separator": "cr:separator",
+    "source": "cr:source",
+    "subField": "cr:subField",
+    "transform": "cr:transform"
+  },
+  "@type": "sc:Dataset",
+  "name": "Adap Alpaca Dataset Series",
+  "conformsTo": "http://mlcommons.org/croissant/1.0",
+  "url": "https://github.com/ICWR-NP/Neurips_DB",
+  "distribution": [
+    {
+      "@type": "cr:FileObject",
+      "@id": "adapAlpaca-200",
+      "name": "adapAlpaca-200",
+      "description": "JSON file containing dataset adapAlpaca with 200 entries.",
+      "contentUrl": "https://github.com/ICWR-NP/Neurips_DB/tree/main/reference/adapAlpaca_reference/adapAlpaca-200.json",
+      "encodingFormat": "application/json",
+      "sha256": "cd43aa5d68572a6e79436575b7e751b7067a1aba14ad637050d38e34c1800445"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "adapAlpaca-400",
+      "name": "adapAlpaca-400",
+      "description": "JSON file containing dataset adapAlpaca with 400 entries.",
+      "contentUrl": "https://github.com/ICWR-NP/Neurips_DB/tree/main/reference/adapAlpaca_reference/adapAlpaca-400.json",
+      "encodingFormat": "application/json",
+      "sha256": "bc03edae4506018a206916a066f5c667a878d75d8991a1cbe19168704206ccf3"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "adapAlpaca-600",
+      "name": "adapAlpaca-600",
+      "description": "JSON file containing dataset adapAlpaca with 600 entries.",
+      "contentUrl": "https://github.com/ICWR-NP/Neurips_DB/tree/main/reference/adapAlpaca_reference/adapAlpaca-600.json",
+      "encodingFormat": "application/json",
+      "sha256": "3fbf1550006df18285fc520f938ba44d6fa78b3a70542fbae3a728f04b28fe8f"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "adapAlpaca-800",
+      "name": "adapAlpaca-800",
+      "description": "JSON file containing dataset adapAlpaca with 800 entries.",
+      "contentUrl": "https://github.com/ICWR-NP/Neurips_DB/tree/main/reference/adapAlpaca_reference/adapAlpaca-800.json",
+      "encodingFormat": "application/json",
+      "sha256": "054f01d663b8f2c6488a201878b0397052250181984826be9a92133a547144a7"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "adapAlpaca-1000",
+      "name": "adapAlpaca-1000",
+      "description": "JSON file containing dataset adapAlpaca with 1000 entries.",
+      "contentUrl": "https://github.com/ICWR-NP/Neurips_DB/tree/main/reference/adapAlpaca_reference/adapAlpaca-1000.json",
+      "encodingFormat": "application/json",
+      "sha256": "5c4ebdb569747d2a5a177618b47b6e1504106228e8776668f663a8140cc4eaf6"
+    }
+  ],
+  "recordSet": [
+    {
+      "@type": "cr:RecordSet",
+      "@id": "adapAlpaca-record-200",
+      "name": "adapAlpaca Dataset Records for 200",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "adapAlpaca-200/instruction",
+          "name": "instruction",
+          "description": "The instruction provided for generating output.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "adapAlpaca-200"
+            },
+            "extract": {
+              "jsonPath": "$[*].instruction"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "adapAlpaca-200/generator",
+          "name": "generator",
+          "description": "The model and settings used to generate the output.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "adapAlpaca-200"
+            },
+            "extract": {
+              "jsonPath": "$[*].generator"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "adapAlpaca-200/dataset",
+          "name": "dataset",
+          "description": "The source dataset used for the output generation.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "adapAlpaca-200"
+            },
+            "extract": {
+              "jsonPath": "$[*].dataset"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "adapAlpaca-200/output_word_count",
+          "name": "output_word_count",
+          "description": "The word count of the generated output.",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "adapAlpaca-200"
+            },
+            "extract": {
+              "jsonPath": "$[*].output_word_count"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "adapAlpaca-200/output",
+          "name": "output",
+          "description": "The text output generated by the model in response to the instruction.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "adapAlpaca-200"
+            },
+            "extract": {
+              "jsonPath": "$[*].output"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "adapAlpaca-record-400",
+      "name": "adapAlpaca Dataset Records for 400",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "adapAlpaca-400/instruction",
+          "name": "instruction",
+          "description": "The instruction provided for generating output.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "adapAlpaca-400"
+            },
+            "extract": {
+              "jsonPath": "$[*].instruction"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "adapAlpaca-400/generator",
+          "name": "generator",
+          "description": "The model and settings used to generate the output.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "adapAlpaca-400"
+            },
+            "extract": {
+              "jsonPath": "$[*].generator"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "adapAlpaca-400/dataset",
+          "name": "dataset",
+          "description": "The source dataset used for the output generation.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "adapAlpaca-400"
+            },
+            "extract": {
+              "jsonPath": "$[*].dataset"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "adapAlpaca-400/output_word_count",
+          "name": "output_word_count",
+          "description": "The word count of the generated output.",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "adapAlpaca-400"
+            },
+            "extract": {
+              "jsonPath": "$[*].output_word_count"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "adapAlpaca-400/output",
+          "name": "output",
+          "description": "The text output generated by the model in response to the instruction.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "adapAlpaca-400"
+            },
+            "extract": {
+              "jsonPath": "$[*].output"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "adapAlpaca-record-600",
+      "name": "adapAlpaca Dataset Records for 600",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "adapAlpaca-600/instruction",
+          "name": "instruction",
+          "description": "The instruction provided for generating output.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "adapAlpaca-600"
+            },
+            "extract": {
+              "jsonPath": "$[*].instruction"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "adapAlpaca-600/generator",
+          "name": "generator",
+          "description": "The model and settings used to generate the output.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "adapAlpaca-600"
+            },
+            "extract": {
+              "jsonPath": "$[*].generator"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "adapAlpaca-600/dataset",
+          "name": "dataset",
+          "description": "The source dataset used for the output generation.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "adapAlpaca-600"
+            },
+            "extract": {
+              "jsonPath": "$[*].dataset"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "adapAlpaca-600/output_word_count",
+          "name": "output_word_count",
+          "description": "The word count of the generated output.",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "adapAlpaca-600"
+            },
+            "extract": {
+              "jsonPath": "$[*].output_word_count"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "adapAlpaca-600/output",
+          "name": "output",
+          "description": "The text output generated by the model in response to the instruction.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "adapAlpaca-600"
+            },
+            "extract": {
+              "jsonPath": "$[*].output"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "adapAlpaca-record-800",
+      "name": "adapAlpaca Dataset Records for 800",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "adapAlpaca-800/instruction",
+          "name": "instruction",
+          "description": "The instruction provided for generating output.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "adapAlpaca-800"
+            },
+            "extract": {
+              "jsonPath": "$[*].instruction"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "adapAlpaca-800/generator",
+          "name": "generator",
+          "description": "The model and settings used to generate the output.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "adapAlpaca-800"
+            },
+            "extract": {
+              "jsonPath": "$[*].generator"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "adapAlpaca-800/dataset",
+          "name": "dataset",
+          "description": "The source dataset used for the output generation.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "adapAlpaca-800"
+            },
+            "extract": {
+              "jsonPath": "$[*].dataset"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "adapAlpaca-800/output_word_count",
+          "name": "output_word_count",
+          "description": "The word count of the generated output.",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "adapAlpaca-800"
+            },
+            "extract": {
+              "jsonPath": "$[*].output_word_count"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "adapAlpaca-800/output",
+          "name": "output",
+          "description": "The text output generated by the model in response to the instruction.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "adapAlpaca-800"
+            },
+            "extract": {
+              "jsonPath": "$[*].output"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "adapAlpaca-record-1000",
+      "name": "adapAlpaca Dataset Records for 1000",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "adapAlpaca-1000/instruction",
+          "name": "instruction",
+          "description": "The instruction provided for generating output.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "adapAlpaca-1000"
+            },
+            "extract": {
+              "jsonPath": "$[*].instruction"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "adapAlpaca-1000/generator",
+          "name": "generator",
+          "description": "The model and settings used to generate the output.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "adapAlpaca-1000"
+            },
+            "extract": {
+              "jsonPath": "$[*].generator"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "adapAlpaca-1000/dataset",
+          "name": "dataset",
+          "description": "The source dataset used for the output generation.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "adapAlpaca-1000"
+            },
+            "extract": {
+              "jsonPath": "$[*].dataset"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "adapAlpaca-1000/output_word_count",
+          "name": "output_word_count",
+          "description": "The word count of the generated output.",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "adapAlpaca-1000"
+            },
+            "extract": {
+              "jsonPath": "$[*].output_word_count"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "adapAlpaca-1000/output",
+          "name": "output",
+          "description": "The text output generated by the model in response to the instruction.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "adapAlpaca-1000"
+            },
+            "extract": {
+              "jsonPath": "$[*].output"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
