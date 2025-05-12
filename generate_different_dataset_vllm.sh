@@ -1,21 +1,23 @@
 #!/bin/bash
 
-# Enter the vllm hosted model name
-VLLM_HOST_MODEL_NAME="llama3"
-VLLM_PORT_NUMBER=8010
-
+source activate vllm
 # Generation MODE
 # NOTE available modes: "default", "detailed", "concise", "quality_enhancement", "copy_paste"
-MODE="copy_paste"
+MODE="default"
 
 # Max workers
-MAX_WORKERS=10
+MAX_WORKERS=40
 # Output folder
 OUTPUT_FOLDER="generated_data"
 
 # generate output folder
 mkdir -p $OUTPUT_FOLDER
 
+# Check if required environment variables are set
+if [ -z "$VLLM_HOST_MODEL_NAME" ] || [ -z "$VLLM_PORT_NUMBER" ]; then
+    echo "Error: VLLM_HOST_MODEL_NAME and VLLM_PORT_NUMBER must be set"
+    exit 1
+fi
 
 for dataset_name in 'koala' 'vicuna' 'sinstruct' 'wizardlm' 'lima' 'alpaca'
 do
